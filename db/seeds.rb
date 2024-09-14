@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Event.create!([
+  { title: "Tech Conference", date: Date.today, location: "San Francisco" },
+  { title: "Music Festival", date: Date.today + 7.days, location: "New York" }
+])
