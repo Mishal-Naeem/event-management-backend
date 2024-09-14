@@ -3,7 +3,6 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -33,6 +32,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ], require: "debug/prelude"
+  gem 'sqlite3', '~> 1.4'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
@@ -41,4 +41,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-
+# Use PostgreSQL as the database for production
+group :production do
+  gem 'pg'
+end
